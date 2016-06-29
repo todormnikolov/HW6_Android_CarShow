@@ -5,24 +5,34 @@ import android.graphics.Bitmap;
 
 public class Car {
     private Bitmap bitmap;
-    private String text;
+    private String brand;
+    private String model;
     private String url;
 
-    public Car(String text, String url) {
-        this.url = url;
-        this.text = text;
+    public Car(String brand, String model, String url) {
+        setBrand(brand);
+        setModel(model);
+        setUrl(url);
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public Bitmap getBitmap() {
         return bitmap;
     }
 
-    public String getText() {
-        return this.text;
+    public String getModel() {
+        return this.model;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getUrl() {

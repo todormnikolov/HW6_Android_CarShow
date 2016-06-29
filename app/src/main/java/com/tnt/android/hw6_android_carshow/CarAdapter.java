@@ -9,9 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by USER on 15.6.2016 г..
- */
+
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarHolder> {
 
     List<Car> cars;
@@ -30,7 +28,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarHolder> {
     @Override
     public void onBindViewHolder(CarHolder holder, int position) {
         Car car = cars.get(position);
-        holder.txtText.setText(car.getText());
+        holder.txtBrand.setText(car.getBrand());
         holder.imgView.setImageBitmap(car.getBitmap());
         new DownloadImageTask(holder.imgView).execute(car.getUrl());
     }
@@ -42,12 +40,12 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarHolder> {
 
     public class CarHolder extends RecyclerView.ViewHolder {
 
-        TextView txtText;
+        TextView txtBrand;
         ImageView imgView;
 
         public CarHolder(View itemView) {
             super(itemView);
-            txtText = (TextView) itemView.findViewById(R.id.txt_text);
+            txtBrand = (TextView) itemView.findViewById(R.id.txt_brand);
             imgView = (ImageView) itemView.findViewById(R.id.img_view);
         }
     }
